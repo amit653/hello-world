@@ -10,10 +10,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: docker compose config
-      - uses: hashicorp/setup-terraform@v3
-      - run: terraform fmt -check
+
+      - name: Validate Docker Compose
+        run: docker compose config
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Check Terraform Formatting
+        run: terraform fmt -check
+
       - name: Validate Terraform
-      - run: terraform validate
-      - run: terraform init -backend=false # initializes providers without connecting to a remote backend (faster, safer in CI).
-      - run: terraform plan -no-color input=false
+        run: terraform validate
+
+      - name: Initialize Terraform
+        run: terraform init -backend=false # initializes providers without connecting to a remote backend (faster, safer in CI)
+
+      - name: Preview Infrastructure Changes
+        run: terraform plan -no-color -input=false
