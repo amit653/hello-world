@@ -3,7 +3,7 @@ on:
   pull_request:
     branches: [ main ]  # Runs when a PR targets main
   push:
-  branches: [ main ] # Runs when you push directly to main
+    branches: [ main ] # Runs when you push directly to main
 
 jobs:
   validate:
