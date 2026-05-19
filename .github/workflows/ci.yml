@@ -25,6 +25,3 @@ jobs:
 
       - name: Initialize Terraform
         run: terraform init -backend=false # initializes providers without connecting to a remote backend (faster, safer in CI)
-
-      #- name: Preview Infrastructure Changes
-      #  run: terraform plan -no-color -input=false
