@@ -1,0 +1,17 @@
+name: Continuous Integration
+on:
+  pull_request:
+    branches: [ main ]  # Runs when a PR targets main
+  push:
+  branches: [ main ] # Runs when you push directly to main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose config
+      - uses: hashicorp/setup-terraform@v3
+      - run: terraform fmt -check
+      - run: terraform init
+      - run: terraform plan -no-color
