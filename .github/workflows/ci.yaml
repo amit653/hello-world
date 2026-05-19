@@ -1,7 +1,10 @@
 name: Continuous Integration
 on:
   pull_request:
-    branches: [ main ]
+    branches: [ main ]  # Runs when a PR targets main
+  push:
+    branches: [ main ] # Runs when you push directly to main
+
 jobs:
   validate:
     runs-on: ubuntu-latest

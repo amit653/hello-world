@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  app:
+    build: ./app          # points to the app folder (where you should have a Dockerfile)
+    container_name: hello-world-app
+    command: python hello.py
+    volumes:
+      - ./app:/usr/src/app #mounts your local app folder into the container.
+    working_dir: /usr/src/app
