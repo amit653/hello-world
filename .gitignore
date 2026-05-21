@@ -1,7 +1,7 @@
 # Local Terraform files
-*.tfstate
-*.tfstate.*
-.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.*
+terraform/.terraform/
 crash.log
 override.tf
 override.tf.json
@@ -13,4 +13,4 @@ override.tf.json
 *.old
 
 # Lock file (optional: commit if you want reproducible provider versions)
-.terraform.lock.hcl
+terraform/.terraform.lock.hcl
