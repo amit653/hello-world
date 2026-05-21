@@ -1,7 +1,7 @@
 # Local Terraform files
 terraform/*.tfstate
 terraform/*.tfstate.*
-terraform/.terraform/
+terraform/.terraform/*
 crash.log
 override.tf
 override.tf.json
