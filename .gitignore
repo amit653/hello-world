@@ -1,0 +1,16 @@
+# Local Terraform files
+*.tfstate
+*.tfstate.*
+.terraform/
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Backup files
+*.bak
+*.old
+
+# Lock file (optional: commit if you want reproducible provider versions)
+.terraform.lock.hcl
