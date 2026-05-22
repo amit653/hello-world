@@ -13,6 +13,6 @@ terraform {
     bucket         = "amit-tf-state-bucket-2026"
     key            = "terraform/state.tfstate"
     region         = "us-east-1"
-    use_lockfile = "terraform-locks"
+    dynamodb_table  = "terraform-locks"
   }
 }
