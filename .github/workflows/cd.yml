@@ -6,7 +6,7 @@ on:
   workflow_dispatch:     # manual trigger using run CD workflow under Actions
   schedule:
     #- cron: "50 16 * * *"   # every day at 10 pm ist
-    - cron: "*/5 * * * *"   # every 5 minutes
+    - cron: '*/5 * * * *'   # every 5 minutes
 
 
 jobs:
