@@ -3,7 +3,10 @@ name: Continuous Deployment
 on:
   push:
     branches: [ main ]   # deploy automatically after merge
-  workflow_dispatch:     # allow manual trigger
+  workflow_dispatch:     # manual trigger using run CD workflow under Actions
+  schedule:
+    - cron: "37 16 * * *"   # every day at 10 pm ist
+
 
 jobs:
   deploy:
